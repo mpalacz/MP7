@@ -9,9 +9,9 @@ public class Main {
         System.out.println("Przed pętlą:\n" + Arrays.toString(array));
 
         int licznik = 0;
-
-        for(int j = 0; j < array.length; j++) {
-            for (int i = 0; i < array.length - 1; i++) {
+        for(int j = 0; j < array.length - 1; j++) {
+            licznik++;
+            for (int i = 0; i < array.length - 1 - j; i++) {
                 if (array[i] > array[i + 1]) {
                     int x = array[i];
                     array[i] = array[i + 1];
