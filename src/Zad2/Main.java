@@ -7,12 +7,26 @@ public class Main {
         int[] array = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
         System.out.println("Tablica początkowa:\n" + Arrays.toString(array));
 
-        int min = 0;
+        int licznik = 0;
+        //boolean czySzukac = true;
 
-        for (int i = 0; i < array.length; i++)
-            if (array[i] < array[min])
-                min = i;
-
-        System.out.println("Wartość minimalna zajduje się na indeksie o numerze: " + min);
+        for (int j = 0; j < array.length /*&& czySzukac*/; j++) {
+            licznik++;
+            //czySzukac = false;
+            int min = j;
+            for (int i = j + 1; i < array.length; i++) {
+                licznik++;
+                if (array[i] < array[min]) {
+                    min = i;
+                    //czySzukac = true;
+                    licznik++;
+                }
+            }
+            int x = array[min];
+            array[min] = array[j];
+            array[j] = x;
+        }
+        System.out.println(Arrays.toString(array));
+        System.out.println(licznik);
     }
 }
